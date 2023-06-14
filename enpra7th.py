@@ -4,8 +4,12 @@ import random as rm
 def generate_random_bumber():
     return rm.randint(100,999)
 
-#数字を回答する
-ans_number = int(input("解答を入力してください : "))
+#ヒントを出力
+def random_digit():
+    digit = rm.choice(str(generate_random_bumber()))
+    print(digit)
+    return digit
+
 
 #正解と不正解の出力
 def check_answer(answer, guess):
@@ -14,6 +18,7 @@ def check_answer(answer, guess):
         return True
     else:
         print("不正解です。")
+        random_digit()
         return False
 
 #ゲームの中身
